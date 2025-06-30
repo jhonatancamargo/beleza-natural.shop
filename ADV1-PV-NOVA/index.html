@@ -1,303 +1,266 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - ZeroCalv®</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            margin: 8px;
-        }
-        .question {
-            margin-bottom: 40px;
-        }
-        .question img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
-        }
-        .question p {
-            margin: 10px 0;
-            font-size: 18px;
-            color: #333;
-        }
-        .buttons button {
-    margin: 0 1px;
-    padding: 6px 7px;
-    font-size: 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-        .buttons button.sim {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .buttons button.nao {
-            background-color: #f44336;
-            color: white;
-        }
-        .buttons button:hover {
-            background-color: #333;
-        }
-        .hidden {
-            display: none;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            margin-top: 20px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .progress-bar-inner {
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, #4CAF50 0%, #81C784 100%);
-            transition: width 0.4s ease-in-out;
-        }
-        .progress-text {
-            position: absolute;
-            width: 100%;
-            text-align: center;
-            top: 0;
-            left: 0;
-            height: 100%;
-            line-height: 20px;
-            font-size: 12px;
-            color: #333;
-        }
-        #final {
-            text-align: center;
-        }
-        #analise-resposta {
-            font-size: 18px;
-            color: #555;
-            margin-top: 20px;
-        }
-        #final-texto {
-            margin-top: 20px;
-            font-size: 20px;
-            color: #333;
-            font-weight: bold;
-            margin-bottom: 14%;
-        }
-        #btn-conhecer-tratamento {
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-decoration: none;
-            animation: pulse-border 1.5s infinite;
-          
-        }
-        #btn-conhecer-tratamento:hover {
-            background-color: #333;
-            color: white;
-        }
-        @keyframes pulse-border {
-            0% {
-                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-            }
-        }
-    </style>
-    <!-- Inclua o script do Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QWFLTW2S5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3QWFLTW2S5');
-    </script>
-    
-    <!-- Meta Pixel Code -->
-<script>
-	!function(f,b,e,v,n,t,s)
-	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-	n.queue=[];t=b.createElement(e);t.async=!0;
-	t.src=v;s=b.getElementsByTagName(e)[0];
-	s.parentNode.insertBefore(t,s)}(window, document,'script',
-	'https://connect.facebook.net/en_US/fbevents.js');
-	fbq('init', '731867382097581');
-	fbq('track', 'PageView');
-	fbq('track', 'ADV');
-	</script>
-	<noscript><img height="1" width="1" style="display:none"
-	src="https://www.facebook.com/tr?id=731867382097581&ev=PageView&noscript=1"
-	/></noscript>
-	<!-- End Meta Pixel Code -->
-</head>
-<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz - ZeroCalv®</title>
 
-<div class="container">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      margin: 8px;
+    }
+
+    .question {
+      margin-bottom: 40px;
+    }
+
+    .question img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+
+    .question p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      margin: 5px;
+      padding: 10px 16px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      color: white;
+    }
+
+    .buttons button.sim {
+      background-color: #4CAF50;
+    }
+
+    .buttons button.nao {
+      background-color: #f44336;
+    }
+
+    .buttons button:hover {
+      background-color: #333;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      margin-top: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .progress-bar-inner {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #4CAF50 0%, #81C784 100%);
+      transition: width 0.4s ease-in-out;
+    }
+
+    .progress-text {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 0;
+      left: 0;
+      height: 100%;
+      line-height: 20px;
+      font-size: 12px;
+      color: #333;
+    }
+
+    #final-texto {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 14%;
+    }
+
+    #btn-conhecer-tratamento {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
+      animation: pulse-border 1.5s infinite;
+    }
+
+    #btn-conhecer-tratamento:hover {
+      background-color: #333;
+    }
+
+    @keyframes pulse-border {
+      0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+      }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QWFLTW2S5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3QWFLTW2S5');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '731867382097581');
+    fbq('track', 'PageView');
+    fbq('track', 'ADV');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=731867382097581&ev=PageView&noscript=1"/>
+  </noscript>
+</head>
+
+<body>
+  <div class="container">
     <div id="question1" class="question">
-        <img src="img/1.webp" alt="Imagem 1">
-        <p>Você percebeu que seu cabelo está mais fino, com entradas maiores ou falhas visíveis?</p>
-        <div class="buttons">
-            <button class="sim" onclick="responder('question1', 'question1_sim')">SIM</button>
-            <button class="nao" onclick="responder('question1', 'question1_nao')">NÃO</button>
-        </div>
+      <img src="img/1.webp" alt="Imagem 1">
+      <p>Você percebeu que seu cabelo está mais fino, com entradas maiores ou falhas visíveis?</p>
+      <div class="buttons">
+        <button class="sim" onclick="responder('question1', 'question1_sim')">SIM</button>
+        <button class="nao" onclick="responder('question1', 'question1_nao')">NÃO</button>
+      </div>
     </div>
 
     <div id="question2" class="question hidden">
-        <img src="img/2.webp" alt="Imagem 2">
-        <p>Em qual região você percebe a maior perda de fios?</p>
-        <div class="buttons">
-            <button class="sim" onclick="responder('question2', 'question2_estradas')">Entradas laterais</button>
-            <button class="nao" onclick="responder('question2', 'question2_coroa')">Topo da cabeça</button>
-            <button class="nao" onclick="responder('question2', 'question2_dois')">Nos dois</button>
-        </div>
+      <img src="img/2.webp" alt="Imagem 2">
+      <p>Em qual região você percebe a maior perda de fios?</p>
+      <div class="buttons">
+        <button class="sim" onclick="responder('question2', 'question2_estradas')">Entradas laterais</button>
+        <button class="sim" onclick="responder('question2', 'question2_coroa')">Topo da cabeça</button>
+        <button class="sim" onclick="responder('question2', 'question2_dois')">Nos dois</button>
+      </div>
     </div>
 
     <div id="question3" class="question hidden">
-        <img src="img/3.webp" alt="Imagem 3">
-        <p> Já tentou algum tratamento ou produto para parar a queda?</p>
-        <div class="buttons">
-            <button class="sim" onclick="responder('question3', 'question3_sim')">Sim, mas sem resultado</button>
-            <button class="nao" onclick="responder('question3', 'question3_nao')">Ainda não tentei</button>
-        </div>
+      <img src="img/3.webp" alt="Imagem 3">
+      <p>Já tentou algum tratamento ou produto para parar a queda?</p>
+      <div class="buttons">
+        <button class="sim" onclick="responder('question3', 'question3_sim')">Sim, mas sem resultado</button>
+        <button class="nao" onclick="responder('question3', 'question3_nao')">Ainda não tentei</button>
+      </div>
     </div>
 
     <div id="question4" class="question hidden">
-        <img src="img/4.webp" alt="Imagem 4">
-        <p> Você já notou que seus pelos da barba continuam crescendo...
-...mas o cabelo parece cada vez mais fraco?</p>
-        <div class="buttons">
-            <button class="sim" onclick="responder('question4', 'question4_sim')">SIM</button>
-            <button class="nao" onclick="responder('question4', 'question4_nao_pensou')">Não tinha pensado nisso</button>
-        </div>
+      <img src="img/4.webp" alt="Imagem 4">
+      <p>Você já notou que seus pelos da barba continuam crescendo... mas o cabelo parece cada vez mais fraco?</p>
+      <div class="buttons">
+        <button class="sim" onclick="responder('question4', 'question4_sim')">SIM</button>
+        <button class="nao" onclick="responder('question4', 'question4_nao_pensou')">Não tinha pensado nisso</button>
+      </div>
     </div>
 
     <div id="final" class="question hidden">
-        <p id="analise-resposta">Analisando resposta...</p>
-        <div class="progress-bar">
-            <div class="progress-bar-inner"></div>
-            <div class="progress-text">0%</div>
-        </div>
-        <p id="final-texto" class="hidden">⚠️ Seus sintomas indicam um início (ou avanço) de alopecia androgenética.
-Mas a boa notícia é: ainda dá tempo de reverter.
-Conheça o tratamento que está ajudando brasileiros a recuperar o cabelo de forma natural e definitiva.</p>
-        <a id="btn-conhecer-tratamento" class="hidden" href="../PV-NOVA">Ver como recuperar meu cabelo</a>
+      <p id="analise-resposta">Analisando resposta...</p>
+      <div class="progress-bar">
+        <div class="progress-bar-inner"></div>
+        <div class="progress-text">0%</div>
+      </div>
+      <p id="final-texto" class="hidden">⚠️ Seus sintomas indicam um início (ou avanço) de alopecia androgenética.<br>A boa notícia é: ainda dá tempo de reverter.<br>Conheça o tratamento que está ajudando brasileiros a recuperar o cabelo de forma natural e definitiva.</p>
+      <a id="btn-conhecer-tratamento" class="hidden" href="../PV-NOVA">Ver como recuperar meu cabelo</a>
     </div>
-</div>
+  </div>
 
-  
-<script>
+  <script>
     var currentQuestion = 1;
     var totalQuestions = 4;
 
     function responder(questionId, evento) {
-        // Enviar evento para o Google Analytics
-        gtag('event', 'resposta_quiz', {
-            'event_category': 'Quiz',
-            'event_label': evento
-        });
+      gtag('event', 'resposta_quiz', {
+        'event_category': 'Quiz',
+        'event_label': evento
+      });
 
-        document.getElementById(questionId).classList.add('hidden');
-        currentQuestion++;
+      document.getElementById(questionId).classList.add('hidden');
+      currentQuestion++;
 
-        if (currentQuestion <= totalQuestions) {
-            document.getElementById('question' + currentQuestion).classList.remove('hidden');
-        } else {
-            document.getElementById('final').classList.remove('hidden');
-            startProgressBar();
-        }
+      if (currentQuestion <= totalQuestions) {
+        document.getElementById('question' + currentQuestion).classList.remove('hidden');
+      } else {
+        document.getElementById('final').classList.remove('hidden');
+        startProgressBar();
+      }
     }
 
     function startProgressBar() {
-        var progressBar = document.querySelector('.progress-bar-inner');
-        var progressText = document.querySelector('.progress-text');
-        var width = 0;
+      var progressBar = document.querySelector('.progress-bar-inner');
+      var progressText = document.querySelector('.progress-text');
+      var width = 0;
 
-        var interval = setInterval(function() {
-            if (width >= 100) {
-                clearInterval(interval);
-                document.getElementById('analise-resposta').classList.add('hidden');
-                document.getElementById('final-texto').classList.remove('hidden');
-                document.getElementById('btn-conhecer-tratamento').classList.remove('hidden');
-            } else {
-                width++;
-                progressBar.style.width = width + '%';
-                progressText.textContent = width + '%';
-            }
-        }, 30);
+      var interval = setInterval(function () {
+        if (width >= 100) {
+          clearInterval(interval);
+          document.getElementById('analise-resposta').classList.add('hidden');
+          document.getElementById('final-texto').classList.remove('hidden');
+          document.getElementById('btn-conhecer-tratamento').classList.remove('hidden');
+        } else {
+          width++;
+          progressBar.style.width = width + '%';
+          progressText.textContent = width + '%';
+        }
+      }, 30);
     }
-</script>
-
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+  </script>
 </body>
 </html>
