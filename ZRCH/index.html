@@ -132,16 +132,35 @@ src="https://www.facebook.com/tr?id=4118265425082703&ev=PageView&noscript=1"
   </div>
 
   <!-- CONTEÚDO PRINCIPAL -->
-  <main class="content">
-    <h1>‘Método caseiro promete reduzir mau odor nos pés em até 7 dias’; veja como funciona</h1>
-    <p class="sub">Guia reúne 21 receitas simples com itens de casa, além de rotina de 7 dias e orientações para higienizar meias e calçados. Especialistas lembram: persistindo o problema, procure um profissional.</p>
-    <div class="meta">
-      <span>Por Redação Portal Agora</span>
-      <span class="dot"></span>
-      <time datetime="2025-09-29">29/09/2025 08h00</time>
-      <span class="dot"></span>
-      <span>Atualizado há 2 horas</span>
-    </div>
+<main class="content">
+  <h1>‘Método caseiro promete reduzir mau odor nos pés em até 7 dias’; veja como funciona</h1>
+  <p class="sub">Guia reúne 21 receitas simples com itens de casa, além de rotina de 7 dias e orientações para higienizar meias e calçados. Especialistas lembram: persistindo o problema, procure um profissional.</p>
+  <div class="meta">
+    <span>Por Redação Portal Agora</span>
+    <span class="dot"></span>
+    <time id="data-publicacao"></time>
+    <span class="dot"></span>
+    <span id="data-atualizacao"></span>
+  </div>
+
+
+<script>
+  // Função para formatar no padrão brasileiro
+  function formatarDataBR(data) {
+    const opcoes = { day: '2-digit', month: '2-digit', year: 'numeric' };
+    return data.toLocaleDateString('pt-BR', opcoes) + " " + 
+           data.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  const agora = new Date();
+  const publicado = agora; // publicação no momento atual
+  const atualizado = new Date(agora.getTime() + (2 * 60 * 60 * 1000)); // +2 horas
+
+  // Inserir na página
+  document.getElementById("data-publicacao").textContent = formatarDataBR(publicado);
+  document.getElementById("data-atualizacao").textContent = "Atualizado há 2 horas";
+</script>
+
 
     <div class="grid" style="margin-top:12px">
       <aside class="share" aria-label="compartilhar">
