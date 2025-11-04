@@ -1,265 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Upsell-BBJ</title>
-    <script type="text/javascript">
-        var back_redirect_back_link = '/fdc/completa/' + location.search;
-        // Não altere daqui para baixo
-        history.pushState({}, "", location.href);
-        history.pushState({}, "", location.href);
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>Upsell - Bumbum Invejado</title>
 
-        window.addEventListener('popstate', function (event) {
-            if (event.state) {
-                setTimeout(function () {
-                    location.href = back_redirect_back_link;
-                }, 1);
-            }
-        }, false);
-    </script>
-    <style>
-        html,
-        body {
-            padding: 0;
-            margin: 0;
-            font-family: sans-serif;
-        }
-        h1 {
-            font-size: 42px;
-        }
-        a {
-            color: #555555;
-            text-decoration: none;
-        }
-        p {
-            line-height: 1.5;
-            font-size: 18px;
-        }
-        .big {
-            font-size: 22px;
-        }
-        .center {
-            text-align: center;
-        }
-        .mt-3 {
-            margin-top: 2rem;
-        }
-        .fs-18px {
-            font-size: 18px;
-        }
-        .hl {
-            color: rgb(141, 41, 196);
-        }
-        .V {
-            color: rgb(255, 0, 0);
-        }
-        .I {
-            color: rgb(0, 222, 0, 0.5);
-        }
-        .banner {
-            font-size: 2vw;
-            background-color: rgb(255, 0, 0);
-            font-family: sans-serif;
-            font-weight: bold;
-            color: #FFFFFF;
-        }
-        .disclaimer {
-            color: #999999;
-        }
-        .crossed {
-            text-decoration: line-through;
-            color: rgb(255, 0, 0);
-        }
-        .btn {
-            background-color: rgb(141, 41, 196);
-            border-radius: 4px;
-            display: block;
-            color: #FFFFFF;
-            font-weight: 600;
-            font-size: 4vw;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 10px;
-            padding: 24px 28px;
-            text-decoration: none;
-            box-shadow: 1px 2px 8px #999999;
-        }
-        .new-price {
-            color: rgb(0, 184, 0);
-            text-shadow: 0 2px 4px rgba(0, 222, 0, 0.5);
-            font-size: 32px;
-        }
-        @media (min-width: 600px) {
-            .py-lg-1 {
-                padding-bottom: 0.75rem;
-                padding-top: 0.75rem;
-            }
-            .px-lg-20 {
-                padding-left: 20%;
-                padding-right: 20%;
-            }
-            .btn {
-                max-width: 450px;
-                font-size: 1.25vw;
-            }
-        }
-        @media (max-width: 600px) {
-            .banner {
-                font-size: 3.75vw;
-            }
-            .py-sm-1 {
-                padding-bottom: 0.75rem;
-                padding-top: 0.75rem;
-            }
-            .px-sm-2 {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            .btn {
-                max-width: 75%;
-            }
-            .alt {
-                font-size: 4vw;
-            }
-            h1 {
-                font-size: 5vw;
-            }
-        }
-    </style> 
+  <!-- SEO e preview -->
+  <meta name="description" content="Oferta especial: acelere seus resultados com o Plano Barriga Chapada 3.0 — só hoje, por R$47!">
+  <meta property="og:title" content="Oferta Exclusiva - Barriga Chapada 3.0">
+  <meta property="og:description" content="Aumente seus resultados com o plano de 30 dias do Luiz. Só hoje, por R$47.">
+  <meta property="og:image" content="BOOK.png">
+  <meta property="og:type" content="website">
+
+  <script type="text/javascript">
+    var back_redirect_back_link = '/fdc/completa/' + location.search;
+    history.pushState({}, "", location.href);
+    history.pushState({}, "", location.href);
+
+    window.addEventListener('popstate', function (event) {
+      if (event.state) {
+        setTimeout(function () {
+          location.href = back_redirect_back_link;
+        }, 1);
+      }
+    }, false);
+  </script>
+
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    h1 { font-size: 42px; }
+    h2 { font-size: 32px; }
+    h3 { font-size: 24px; }
+
+    a { color: #555; text-decoration: none; }
+    p { line-height: 1.6; font-size: 18px; margin: 12px 0; }
+
+    .center { text-align: center; }
+    .mt-3 { margin-top: 2rem; }
+    .hl { color: #8d29c4; }
+    .V { color: #ff0000; }
+    .banner {
+      font-size: 2vw;
+      background-color: #ff0000;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+
+    .crossed { text-decoration: line-through; color: #ff0000; }
+    .new-price { color: #00b800; text-shadow: 0 2px 4px rgba(0, 222, 0, 0.5); font-size: 32px; }
+
+    @media (min-width: 600px) {
+      .px-lg-20 { padding-left: 20%; padding-right: 20%; }
+    }
+
+    @media (max-width: 600px) {
+      .banner { font-size: 3.5vw; }
+      h1 { font-size: 6vw; }
+    }
+  </style>
 </head>
-<body>   
-<div class="banner py-lg-1 py-sm-1 center white">
-    Não Feche Essa Página… pois podera causar ERRO na sua compra!
-</div>
-<section class="px-lg-20 px-sm-2 center">
+
+<body>
+  <div class="banner center">
+    Atenção: não feche esta página, sua compra ainda está sendo processada!
+  </div>
+
+  <section class="px-lg-20 center">
     <br>
-    <h1>
-        <span class="hl">ESPERE!</span><p>Oferta ÚNICA E ESPECIAL!</p>
-    </h1>
+    <h1><span class="hl">ESPERE!</span><p>Oferta ÚNICA E ESPECIAL!</p></h1>
     <hr class="mt-3">
-    <p class="mt-3"><strong>Não Feche Essa Página…</strong></p>
 
-    <p class="mt-2"><strong>E se você pudesse aumentar o bumbum, definir a barriga e rejuvenescer…</strong></p>
-    <p class="mt-2"><strong>Ainda mais rápido você gostaria? </strong></p>
-    <p><div style="text-align: left;">Parabéns por tomar a decisão mais inteligente que você poderia ter tomado e ter comprado o <b>PROGRAMA BUMBUM INVEJADO</b> hoje.</div></p>
-    <p><div style="text-align: left;">O <b>BUMBUM INVEJADO</b> vai te dar tudo o que você precisa para começar a jornada que te fará mais magra, sexy e jovem como nunca antes</div></p>
-    <p><div style="text-align: left;">Agora você sabe que para acelerar o o cercimento de seu bumbum, você precisa ativar as tres camadas nusculares de seu bumbum.</div></p>
-    <p><div style="text-align: left;">Afinal, é elas que realmente controlam o seu desenvolvimento.</div></p>
-    <p><div style="text-align: left;">Então, ter em mãos um sistema que ativa essas tres camadas de forma natural é a chave para aumentar seu bumbum definitivamente.</div></p>
-    <p><div style="text-align: left;">Eu estou super animado para ouvir sobre os seus resultados.</div></p>
-    <p><div style="text-align: left;">Mas agora que você sabe disso, eu preciso ser honesto com você.</div></p>
-    <p><div style="text-align: left;">Conforme novas pessoas adquirindo o <b>Progrma Bumbum Invejado</b> e seguem aplicando todos os dias como e indicado.</div></p>
-    <p><div style="text-align: left;">Vão surgindo algumas dúvidas. O que é normal.</div></p>
-    <p><div style="text-align: left;">Mas existe UMA ÚNICA pergunta que aparece todos os dias no meu e-mail…</div></p>
-    <p><div style="text-align: left;">E essa pergunta é…</div></p>
-    <p><div style="text-align: left;"><b>Manuella</b>, eu amei o Programa bumbum invejado…</div></p>
-    <h3>
-        <span class="h1">Mas existe uma maneira de acelerar 
-ainda mais meus resultados e tambem definir meu abdomem? 
-</span></h3>
-<p><div style="text-align: left;">E se você é como a grande maioria das minhas melhores clientes, impacientes, e que querem todos os métodos possíveis para alcançar resultados mais rápidos… </div></p>
-<p><div style="text-align: left;">Principalmente quando elas percebem que funciona…</div></p>
-<p><div style="text-align: left;">Então essa mensagem é diretamente pra você. Por favor, leia atentamente.</div></p>
-<p><div style="text-align: left;">Toda mulher sabe como é difícil ser organizada e ter que pensar e preparar suas refeições, cuidar da carreira profissional, cuidar dos filhos… </div></p>
-<p><div style="text-align: left;">E todo o peso que uma mulher ocupada de hoje em dia precisa carregar nos ombros.</div></p>
-<p><div style="text-align: left;">E como você sabe… </div></p>
-<p><div style="text-align: left;">Se manter no plano é essencial para continuar ativando o tecido anti gordura, perder quilos na balança… e se manter no peso ideal.</div></p>
-<p><div style="text-align: left;">Por esse motivo, conversei com o Luiz, e ele decidiu montar um plano treino de 30 dias completos…</div></p>
-<p><div style="text-align: left;">Para que você possa simplesmente adaptar a sua rotina.</div></p>
-<p><div style="text-align: left;">Ele elimina toda a confusão que você possa ter na hora de escolher um alimento, e também evita que você saia do foco, mesmo que isso seja quase impossível. </div></p>
-<p><div style="text-align: left;">Por isso, eu apresento a vocês…</div></p>
-<h2>
-        <span class="V">O Barriga Chapada 3.0</span><p> Do luiz</p></h2>
-                            <img src="BOOK.png" alt="some text" width=600 height=400>
-<p><div style="text-align: left;">Agora você pode acelerar ainda mais os seus resultados usando um plano simples e fasil para o seu dia.</div></p>
-<p><div style="text-align: left;">Tudo isso usando um passo a passo simples…</div></p>
-<p><div style="text-align: left;">Que além de dar o conforto e eliminar a confusão mental…</div></p>
-<p><div style="text-align: left;">Também vai reduzir os sinais de envelhecimento, e renovar sua energia usando um plano de 30 dias com receitas deliciosas e treinos simples.</div></p>
-<h3>
-<span class="h1">Quando Você Começa a Comer Essas Refeições e aplicar as tecnicas… 
-</span></h3>
-    <p>Algo Quase 'Mágico' Acontece...</p>
-<p><div style="text-align: left;">Ao seguir este metodo e receitas simples, além de Aumentar o bumbum…</div></p>
-<p><div style="text-align: left;">Você estará eliminando automaticamente todos os composto que aceleram silenciosamente o envelhecimento em seu corpo...</div></p>
-<p><div style="text-align: left;">Ao mesmo tempo em que adiciona os ingredientes que vêm com notáveis propriedades de rejuvenescimento...</div></p>
-<p><div style="text-align: left;">E quando você faz isso, algo quase 'mágico' acontece... e acontece RÁPIDO!</div></p>
-<p><div style="text-align: left;">Seu corpo está sendo literalmente forçado a iniciar uma série de processos de rejuvenescimento, queima de gordura e desintoxicação.</div></p>
-<p><div style="text-align: left;">Resultado: Você vai começar a parecer e se sentir mais jovem - e mais magra - instantaneamente!</div></p>
-<p><div style="text-align: left;">E como é a sua satisfação que está em jogo aqui…</div></p>
-<h3>
-<span class="h1">O Luiz decidiu fazer algo muito louco…</span></h3>
-<p><div style="text-align: left;">Ele vai oferecer UMA ÚNICA vez, esse plano de 30 dias…</div></p>
-<p><div style="text-align: left;">Com o menor preço já disponível. </div></p>
-<p><div style="text-align: left;">Esse metodo não está à venda ao público. Somente para as clientes mais valiosas.</div></p>
-<p><div style="text-align: left;">Normalmente, ele é vendido separadamente (para cada aluna do Luiz)... por <strong>$117 dólares.</strong> O que no Brasil hoje custaria cerca de <strong>R$585.</strong> </div></p>
-<p><div style="text-align: left;">Mas, como ele gosta de cuidar o melhor possível de suas clientes, principalmente as que deram um voto de confiança ao seu trabalho…</div></p>
-<p><div style="text-align: left;">Hoje, e somente através desta página…</div></p>
-<p><div style="text-align: left;">Você poderá ter o acesso completo a o Programa Barriga chapada 3.0 de 30 Dias do Luiz, por apenas <strong>R$ 97</strong></div></p>
-<p><div style="text-align: left;">O que, diante do preço normal, significa mais de 80% de desconto!</div></p>
-<p><div style="text-align: left;">Você estará economizando mais de <span class="crossed">R$450</span> reais. </div></p>
-<p><div style="text-align: left;">Se você dividir a quantidade de dias pelo valor…</div></p>
-<p><div style="text-align: left;">Você estará pagando pouco mais de 3 reais por dia para praticamente ter o Luiz orientando todo o seu dia, durante 30 dias.</div></p>
-<p><div style="text-align: left;">E você ainda poderá ficar com o plano para sempre, se quiser.</div></p>
-<p><div style="text-align: left;">Isso não é emocionante? </div></p>
-<p><div style="text-align: left;">E não é só isso.</div></p>
-<h3>
-<span class="h1">Você também estará protegida</span></h3><h3>
-<span class="h1">pela garantia blindada de 7 dias do Luiz.</span></h3>
-<p><div style="text-align: left;">Funciona assim…</div></p>
-<p><div style="text-align: left;">Use, e abuse do seu plano por 7 longos dias.</div></p>
-<p><div style="text-align: left;">Se por qualquer motivo, você achar que esse plano não encaixa na sua rotina, ou se você considerar que ele não acelera os resultados visivelmente, e não te dão mais conforto enquanto você passa pelo processo…</div></p>
-<p><div style="text-align: left;">Então o Luiz insiste que você receba todo o seu dinheiro de volta. Sem perguntas, ou pegadinhas.</div></p>
-<p><div style="text-align: left;">Basta enviar um e-mail para nossa equipe, e você será reembolsada o mais rápido possível.</div></p>
-<p><div style="text-align: left;">E como agradecimento, você ainda pode ficar com o plano alimentar para você usar em algum outro momento. </div></p>
-<p><div style="text-align: left;">Mais uma vez, essa é uma oportunidade única e você não tem absolutamente nada a perder aqui. </div></p>
-<p><div style="text-align: left;">Estas são os  metodos que o Luiz usa pessoalmente com suas aluna, para se manter magras e com aparência de jovem.</div></p>
-<p><div style="text-align: left;">Estas não são treinos e receitas 'chatas'... não, você encontrará substitutos 100% sem "sem culpa" para alguns dos alimentos mais gordurosos e não saudáveis por aí... incluindo pizza, panquecas, sim até mesmo bolo de chocolate "que derrete na boca"... e muitos mais.</div></p>
-    <p>Mas lembre-se, esta é a única vez que você verá esta oferta e se você decidir não aceitá-la…
-        <strong>ela desaparecerá para sempre.</strong></p>
-    <h1>De
-        <span class="crossed">R$ 585</span>
-        por
-        <span class="new-price">R$ 47</span>
-    </h1>
-    </p>
-    <a class="btn mt-3" href="https://go.perfectpay.com.br/PPU38CKHI1P?upsell=true">
-        Sim, Adicione Isso Ao Meu Pedido!
-    </a>
-    <a class="V"href="../BBJ-DOWNSELL"><u>
-        Não, compreendo que nunca mais verei essa oferta novamente.</u></a>
-   
-            <p><div style="text-align: left;">.... </div></p>
- 
-  
+    <p><strong>Não feche esta página…</strong></p>
+    <p><strong>E se você pudesse aumentar o bumbum, definir a barriga e rejuvenescer ainda mais rápido, você gostaria?</strong></p>
 
+    <p style="text-align: left;">Parabéns por tomar a decisão mais inteligente que poderia ter tomado e ter adquirido o <b>Programa Bumbum Invejado</b> hoje.</p>
+    <p style="text-align: left;">O <b>Bumbum Invejado</b> vai te dar tudo o que você precisa para começar a jornada que vai te deixar mais magra, sexy e jovem como nunca antes.</p>
+    <p style="text-align: left;">Agora você sabe que, para acelerar o crescimento do seu bumbum, precisa ativar as três camadas musculares dos glúteos.</p>
+    <p style="text-align: left;">Elas são responsáveis pelo desenvolvimento real do seu corpo.</p>
+    <p style="text-align: left;">Ter em mãos um sistema que ativa essas três camadas naturalmente é a chave para aumentar o bumbum definitivamente.</p>
+    <p style="text-align: left;">Mas agora que você sabe disso, preciso ser honesto com você...</p>
+    <p style="text-align: left;">Conforme novas pessoas adquirem o <b>Programa Bumbum Invejado</b> e aplicam todos os dias como indicado, surgem algumas dúvidas. O que é normal.</p>
+    <p style="text-align: left;">Mas existe uma pergunta que aparece todos os dias no meu e-mail:</p>
+    <p style="text-align: left;"><b>“Manuella, amei o Programa Bumbum Invejado, mas existe uma maneira de acelerar ainda mais meus resultados e também definir meu abdômen?”</b></p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
+    <h3><span class="h1">Se você é como a maioria das minhas alunas — impaciente e quer resultados rápidos — essa mensagem é pra você.</span></h3>
+
+    <p style="text-align: left;">Toda mulher sabe como é difícil cuidar da carreira, da casa, dos filhos e ainda manter o foco em si mesma.</p>
+    <p style="text-align: left;">Por isso, conversei com o Luiz, e ele criou um plano completo de 30 dias para você adaptar à sua rotina e acelerar os resultados.</p>
+
+    <h2><span class="V">O Barriga Chapada 3.0</span> <p>do Luiz</p></h2>
+    <img src="BOOK.png" alt="Plano Barriga Chapada 3.0" width="600" height="400">
+
+    <p style="text-align: left;">Agora você pode acelerar ainda mais seus resultados com um plano simples e prático para o seu dia.</p>
+    <p style="text-align: left;">Ele vai renovar sua energia, reduzir sinais de envelhecimento e eliminar gorduras com receitas deliciosas e treinos leves.</p>
+
+    <h3><span class="h1">Quando você começa a aplicar essas técnicas...</span></h3>
+    <p>Algo quase “mágico” acontece.</p>
+
+    <p style="text-align: left;">Você começa a eliminar toxinas e compostos que envelhecem o corpo, enquanto ativa o rejuvenescimento e a queima de gordura.</p>
+    <p style="text-align: left;">Em poucos dias, seu corpo responde: você se sente mais jovem, mais leve e mais confiante.</p>
+
+    <h3><span class="h1">E para te ajudar ainda mais...</span></h3>
+    <p style="text-align: left;">O Luiz decidiu fazer algo incrível: oferecer esse plano completo por um valor simbólico.</p>
+
+    <p style="text-align: left;">Normalmente, ele é vendido por <strong>R$585</strong>, mas hoje, exclusivamente nesta página, você pode garantir por apenas <strong>R$47</strong>.</p>
+    <p style="text-align: left;">Isso significa mais de 90% de desconto! Você economiza <span class="crossed">R$538</span>.</p>
+
+    <h3><span class="h1">E ainda conta com a garantia blindada de 7 dias!</span></h3>
+    <p style="text-align: left;">Use e abuse do plano por 7 dias. Se não gostar, o Luiz devolve 100% do seu dinheiro, sem perguntas.</p>
+    <p style="text-align: left;">Você ainda pode ficar com o material como presente de agradecimento.</p>
+
+    <p><strong>Mas atenção:</strong> esta é uma oferta única e, se você sair desta página, ela desaparecerá para sempre.</p>
+
+    <h1>De <span class="crossed">R$ 585</span> por <span class="new-price">R$ 47</span></h1>
+
+    <!-- 🔽 Botões Cakto integrados -->
+    <div class="mt-3 center">
+      <cakto-upsell-buttons>
+        <cakto-upsell-accept
+          bg-color="#8d29c4"
+          text-color="#ffffff"
+          upsell-accept-url="members_area"
+          offer-id="38wrm47"
+          app-base-url="https://app.cakto.com.br"
+          offer-type="upsell"
+          upsell-reject-url="members_area"
+        >
+          Sim, quero aproveitar a oferta
+        </cakto-upsell-accept>
+
+        <cakto-upsell-reject
+          upsell-reject-url="members_area"
+        >
+          Não, eu não quero aproveitar a oferta
+        </cakto-upsell-reject>
+      </cakto-upsell-buttons>
+
+      <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+
+      <style>
+        cakto-upsell-accept::part(button) {
+          background-color: #8d29c4;
+          color: #fff;
+          font-size: 22px;
+          font-weight: bold;
+          padding: 18px 24px;
+          border-radius: 8px;
+          box-shadow: 1px 2px 8px #999;
+          cursor: pointer;
+        }
+        cakto-upsell-reject::part(button) {
+          color: #ff0000;
+          font-size: 16px;
+          text-decoration: underline;
+          background: none;
+          border: none;
+          cursor: pointer;
+          margin-top: 10px;
+        }
+      </style>
+    </div>
+
+    <br><br>
+  </section>
+
+  <!-- jQuery para rastreamento -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
     (function ($) {
-        $('a').each(function () {
-            let href = $(this).attr("href");
-            if (href === undefined || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
-            // if (href.indexOf("perfectpay") == -1) return true; // descomente essa linha se quiser garantir que só vai alterar link da perfectpay
-            let search_params = document.location.search.replace('?', '');
-            let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
-            $(this).attr("href", urlFinal);
-        });
+      $('a').each(function () {
+        let href = $(this).attr("href");
+        if (!href || href.indexOf("#") >= 0 || href.indexOf("api.whatsapp") >= 0) return true;
+        let search_params = document.location.search.replace('?', '');
+        let urlFinal = href + (href.indexOf("?") > 0 ? '&' : '?') + search_params.toString();
+        $(this).attr("href", urlFinal);
+      });
     })(jQuery);
-</script>
+  </script>
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1DFMKE452Y');
+  </script>
 </body>
 </html>
-<script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-1DFMKE452Y"
-></script>
-<script>
-  window.dataLayer = window.dataLayer || []
-  function gtag() {
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
-
-  gtag('config', 'G-1DFMKE452Y')
-</script>
