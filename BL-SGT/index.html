@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Receitas de Bolo – Sem Culpa</title>
+  <meta name="description" content="Receitas de bolos deliciosos sem glúten, sem leite e sem açúcar. E‑book completo com passo a passo simples, ingredientes acessíveis e resultados incríveis.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#ff8a00;
+      --brand-dark:#c96500;
+      --accent:#ffd166;
+      --cream:#fff7ea;
+      --ink:#2b2b2b;
+      --muted:#6b6b6b;
+      --ok:#25a244;
+      --bg:#fff;
+      --card:#ffffff;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
+      --radius:16px;
+      --radius-sm:12px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Nunito",system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+    }
+    .container{width:min(var(--max),92%);margin-inline:auto}
+    .section{padding:48px 0}
+    h1,h2,h3{margin:0 0 12px}
+    h1{font-size:clamp(26px,5.5vw,46px);line-height:1.1}
+    h2{font-size:clamp(22px,4.5vw,34px)}
+    h3{font-size:clamp(18px,3.5vw,24px)}
+    p{margin:0 0 16px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#fff; border:2px solid #fff; color:#813b00;
+      padding:6px 12px; border-radius:999px; font-weight:800; text-transform:uppercase; letter-spacing:.5px;
+      box-shadow:var(--shadow)
+    }
+    .btn{
+      --bg:var(--brand);
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+      padding:16px 22px;border-radius:14px;font-weight:800;font-size:1rem;text-decoration:none;color:#fff;background:linear-gradient(180deg,var(--bg),var(--brand-dark));
+      box-shadow:0 15px 25px rgba(255,138,0,.35); transition:transform .08s ease, filter .2s ease;
+      border:none;cursor:pointer
+    }
+    .btn:hover{filter:saturate(1.1) brightness(1.02)}
+    .btn:active{transform:translateY(1px)}
+    .btn--ghost{background:#fff; color:var(--brand); border:2px solid var(--brand); box-shadow:none}
+    .hero{
+      background:
+        radial-gradient(1200px 400px at 50% -120px, #ffe2bf 0,#ffd7a3 35%, #fff 70%),
+        linear-gradient(180deg,#fff, #fff);
+      padding-top:28px; overflow:hidden
+    }
+    .hero-grid{
+      display:grid; gap:28px; align-items:center
+    }
+    @media(min-width:940px){
+      .hero-grid{grid-template-columns:1.1fr .9fr}
+    }
+    .hero__title{margin-top:6px}
+    .pill-list{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 18px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border-radius:999px;box-shadow:var(--shadow);font-weight:700}
+    .pill svg{width:18px;height:18px}
+    .media-stack{
+      display:grid; gap:12px
+    }
+    .media-stack img{
+      width:100%; height:auto; border-radius:16px; object-fit:cover; box-shadow:var(--shadow)
+    }
+    .grid-2{display:grid;gap:18px}
+    @media(min-width:800px){ .grid-2{grid-template-columns:1fr 1fr} }
+    .card{
+      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px
+    }
+    .feature-list{display:grid;gap:10px;margin:12px 0}
+    .feature{display:flex;align-items:flex-start;gap:10px}
+    .feature i{
+      width:28px;height:28px;flex:0 0 28px;border-radius:50%;
+      background:#eaf8ee;display:grid;place-items:center;color:var(--ok);font-style:normal;font-weight:800
+    }
+    .cta-block{display:grid;gap:18px}
+    .cta-hint{font-weight:700;color:#7b4a13}
+    .center{text-align:center}
+    .quote-small{font-size:.95rem;color:var(--muted)}
+    .social-proof__head{display:flex;align-items:center;gap:10px}
+    .avatar{width:36px;height:36px;border-radius:50%;object-fit:cover}
+    .comments{
+      display:grid;gap:12px;margin-top:18px
+    }
+    .comment{background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:14px}
+    .comment__top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .comment__name{font-weight:800}
+    .comment__time{color:var(--muted);font-size:.9rem}
+    .inline-note{font-weight:800;color:#b44c00}
+    .receive{display:grid;gap:18px}
+    @media(min-width:820px){ .receive{grid-template-columns:1.1fr .9fr; align-items:center} }
+    .steps{display:grid;gap:10px}
+    .step{display:flex;gap:12px; align-items:flex-start}
+    .step i{
+      width:28px;height:28px;border-radius:50%;background:#fff3d6;display:grid;place-items:center;font-style:normal;font-weight:900;color:#9b5d00
+    }
+    .faq{display:grid;gap:12px}
+    details{
+      background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:14px 16px
+    }
+    details>summary{
+      list-style:none;cursor:pointer;font-weight:800
+    }
+    details>summary::-webkit-details-marker{display:none}
+    details[open]{outline:2px solid #ffe5bf}
+    .guarantee{
+      background:linear-gradient(180deg,#fff2d9,#fff); border:1px dashed #ffd9a8; border-radius:16px; padding:22px; text-align:center
+    }
+    .seal{
+      width:92px;height:92px;border-radius:50%;background:#fff;display:grid;place-items:center;margin:0 auto 10px;border:4px solid var(--accent);font-weight:900;color:#8b4c00
+    }
+    .author{display:grid;gap:18px}
+    @media(min-width:860px){ .author{grid-template-columns:.9fr 1.1fr; align-items:center} }
+    .author img{width:100%;border-radius:16px;box-shadow:var(--shadow);object-fit:cover}
+    .tag{display:inline-block;background:#ffe7c4;color:#9b5d00;padding:4px 10px;border-radius:999px;font-weight:800}
+    footer{padding:28px 0 60px;background:#fff7ea}
+    .floating-cta{
+      position:fixed;left:0;right:0;bottom:0;padding:10px 14px;background:rgba(255,255,255,.86);backdrop-filter:blur(6px);border-top:1px solid #f2f2f2;display:flex;gap:10px;z-index:50
+    }
+    .floating-cta .btn{flex:1}
+    @media(min-width:880px){ .floating-cta{display:none} }
+    /* Utilities */
+    .mt-0{margin-top:0}.mb-0{margin-bottom:0}.mb-8{margin-bottom:8px}.mb-16{margin-bottom:16px}.mb-24{margin-bottom:24px}
+    .muted{color:var(--muted)}
+    .caps{letter-spacing:.4px;text-transform:uppercase;font-weight:800}
+    .bcenter{display:block;margin-inline:auto}
+  </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '385902050609326');
+fbq('track', 'PageView');
+fbq('track', 'PV-BJ');
+fbq('track', 'ViewContent');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=385902050609326&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <!-- Barra flutuante no mobile -->
+  <div class="floating-cta" role="region" aria-label="Chamada para ação rápida">
+    <a class="btn" href="#comprar">BAIXAR MINHA CÓPIA</a>
+    <a class="btn btn--ghost" href="#faq">Dúvidas</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero section" id="topo" role="banner">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Sem Glúten</span>
+        <h1 class="hero__title">Receitas de Bolo<br>para comer <span class="inline-note">Sem Culpa</span></h1>
+        <p class="mb-16">Receitas <strong>saudáveis e deliciosas</strong> para todos os amantes de bolo. Passo a passo simples, ingredientes acessíveis e resultados que surpreendem.</p>
+
+        <div class="pill-list" aria-label="Benefícios principais">
+          <span class="pill" title="Receitas testadas e aprovadas">✅ Testadas &amp; Aprovadas</span>
+          <span class="pill" title="Sem glúten, sem leite e sem açúcar">🥣 Sem Glúten • 🥛 Sem Leite • 🍭 Sem Açúcar</span>
+          <span class="pill" title="Ingredientes acessíveis">🛒 Ingredientes Acessíveis</span>
+        </div>
+
+        <div class="cta-block">
+          <a class="btn" href="#comprar" aria-label="Baixar minha cópia do e‑book">BAIXAR MINHA CÓPIA</a>
+          <p class="quote-small">Acesso digital imediato • Pague no Pix, cartão ou boleto</p>
+        </div>
+      </div>
+
+      <div class="media-stack" aria-label="Galeria de bolos">
+        <!-- TODO: trocar imagem -->
+        <img src="img/bl-1.webp" alt="Bolo de chocolate fatiado com cobertura" />
+        <!-- TODO: trocar imagem -->
+        <img src="img/bl-2.gif" alt="Bolo caseiro dourado cortado ao meio" />
+      </div>
+    </div>
+  </header>
+
+  <!-- E-BOOK / OFERTA -->
+  <section class="section" id="oferta">
+    <div class="container grid-2">
+      <div class="card">
+        <span class="tag mb-8">Apresento o</span>
+        <h2 class="mb-8">Livro de Receitas <br><strong>Bolos Sem Glúten</strong></h2>
+        <p class="mb-16">Você receberá <strong>18 receitas inéditas</strong> com fotos e passo a passo simples.</p>
+        <div class="feature-list" role="list">
+          <div class="feature" role="listitem"><i>✓</i> <div><strong>Sem Glúten</strong> — pensado para quem precisa ou prefere evitar.</div></div>
+          <div class="feature" role="listitem"><i>✓</i> <div><strong>Sem Leite</strong> — opções seguras para intolerantes.</div></div>
+          <div class="feature" role="listitem"><i>✓</i> <div><strong>Sem Açúcar</strong> — com versões naturalmente doces.</div></div>
+          <div class="feature" role="listitem"><i>✓</i> <div><strong>Sem Conservantes</strong> — o sabor de bolo caseiro de verdade.</div></div>
+          <div class="feature" role="listitem"><i>✓</i> <div><strong>Você decide</strong> — faça com ou sem ovos/óleos conforme preferir.</div></div>
+        </div>
+        <p class="cta-hint">Funciona mesmo para iniciantes na cozinha.</p>
+      </div>
+
+      <div class="center">
+        <!-- TODO: trocar mockup -->
+        <img src="img/bl-4.png" alt="Mockup do e‑book de bolos sem glúten" style="width:min(420px,90%);border-radius:18px;box-shadow:var(--shadow)">
+        <div class="cta-block" id="comprar">
+          <a class="btn bcenter" href="#checkout">BAIXAR MINHA CÓPIA</a>
+          <p class="muted">Receba no e‑mail e WhatsApp <strong>na hora</strong> após o pagamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="section" id="depoimentos" aria-labelledby="depo-title" style="background:var(--cream)">
+    <div class="container">
+      <div class="social-proof__head mb-16">
+        <!-- TODO: trocar avatar da autora -->
+        <img class="avatar" src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?w=200&q=80&auto=format&fit=crop" alt="Foto da autora">
+        <div>
+          <div class="caps muted">Receitas aprovadas por quem fez</div>
+          <h2 id="depo-title" class="mb-0">Veja os comentários no post fixado</h2>
+          <p class="muted mb-0">Mais de <strong>3.500 comentários</strong> de clientes satisfeitos.</p>
+        </div>
+      </div>
+
+      <!-- feed de comentários -->
+      <div class="comments">
+        <!-- Cada comentário -->
+        <article class="comment" aria-label="Comentário de Juliana">
+          <div class="comment__top">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+            <div>
+              <div class="comment__name">Juliana C.</div>
+              <div class="comment__time">há 2 dias</div>
+            </div>
+          </div>
+          <p>Acabei de comprar. Confio… sabe o que faz! O bolo de cenoura ficou <strong>perfeito e fofinho</strong> com a cobertura.</p>
+        </article>
+
+        <article class="comment" aria-label="Comentário de Elias">
+          <div class="comment__top">
+            <img class="avatar" src="https://randomuser.me/api/portraits/men/33.jpg" alt="">
+            <div><div class="comment__name">Elias P.</div><div class="comment__time">há 5 dias</div></div>
+          </div>
+          <p>Sem glúten, zero leite e <em>maravilhoso</em>. Minha esposa é intolerante e amou. Chegou na hora, super prático.</p>
+        </article>
+
+        <article class="comment" aria-label="Comentário de Cíntia">
+          <div class="comment__top">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/21.jpg" alt="">
+            <div><div class="comment__name">Cíntia R.</div><div class="comment__time">há 1 semana</div></div>
+          </div>
+          <p>Se você é iniciante, compre! O passo a passo é <strong>mão na massa</strong> e o resultado é incrível.</p>
+        </article>
+
+        <article class="comment" aria-label="Comentário de Heloísa">
+          <div class="comment__top">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/3.jpg" alt="">
+            <div><div class="comment__name">Heloísa M.</div><div class="comment__time">há 2 semanas</div></div>
+          </div>
+          <p>Fiz o bolo de milho com coco. Aroma de infância! Minha filha celíaca finalmente pôde repetir sem culpa.</p>
+        </article>
+
+        <article class="comment" aria-label="Comentário de Diego">
+          <div class="comment__top">
+            <img class="avatar" src="https://randomuser.me/api/portraits/men/11.jpg" alt="">
+            <div><div class="comment__name">Diego A.</div><div class="comment__time">há 2 semanas</div></div>
+          </div>
+          <p>Comprei e recebi <strong>na mesma hora</strong> no e‑mail. Receitas práticas e muito saborosas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO VOCÊ RECEBE -->
+  <section class="section" id="como-recebe">
+    <div class="container receive">
+      <div>
+        <h2>E como você recebe?</h2>
+        <p class="muted mb-16">Receba instantaneamente por <strong>e‑mail</strong> e <strong>WhatsApp</strong> após o pagamento. Zero espera!</p>
+        <div class="steps">
+          <div class="step"><i>1</i><div><strong>Pagamento aprovado</strong> — via Pix, cartão ou boleto.</div></div>
+          <div class="step"><i>2</i><div><strong>Acesso imediato</strong> — link do e‑book vai para seu e‑mail e WhatsApp automaticamente.</div></div>
+          <div class="step"><i>3</i><div><strong>Baixe e cozinhe</strong> — salve no celular, tablet ou computador e comece agora.</div></div>
+        </div>
+      </div>
+      <div class="card center">
+        <!-- TODO: trocar imagem -->
+        <!--img src="https://images.unsplash.com/photo-1611162619969-c694e5a0f932?q=80&w=900&auto=format&fit=crop" alt="Ilustração de envio por e‑mail e WhatsApp" style="width:min(420px,92%);border-radius:14px;box-shadow:var(--shadow);margin-bottom:10px"-->
+        <a class="btn" href="#checkout">QUERO RECEBER AGORA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq" aria-labelledby="faq-title" style="background:var(--cream)">
+    <div class="container">
+      <h2 id="faq-title" class="mb-16">Sempre me perguntam…</h2>
+      <div class="faq" role="list">
+        <details role="listitem">
+          <summary>Lara, os ingredientes são caros?</summary>
+          <div class="muted">Não! Usamos ingredientes simples que você já tem em casa. Sempre há versões acessíveis.</div>
+        </details>
+
+        <details role="listitem">
+          <summary>O bolo realmente fica gostoso e fofinho?</summary>
+          <div class="muted">Sim! Fica igual ao normal. Fofo, gostoso, molhadinho e não esfarela. Ninguém percebe que é sem glúten.</div>
+        </details>
+
+        <details role="listitem">
+          <summary>Eu preciso ser experiente na cozinha?</summary>
+          <div class="muted">Não! As receitas foram pensadas para todos os níveis, com um passo a passo super simples.</div>
+        </details>
+
+        <details role="listitem">
+          <summary>O e‑book chega mesmo depois do pagamento?</summary>
+          <div class="muted">Sim! Você recebe na hora no seu e‑mail e no WhatsApp. É tudo automático.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="section" id="garantia">
+    <div class="container">
+      <div class="guarantee">
+        <div class="seal">15 Dias</div>
+        <h3 class="mb-8">Experimente <strong>Sem Riscos</strong></h3>
+        <p class="mb-0">Satisfação garantida ou seu dinheiro de volta. Você tem até <strong>15 dias</strong> para solicitar o reembolso do valor pago pelo produto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORA -->
+  <section class="section" id="autora" aria-labelledby="autora-title" style="background:var(--cream)">
+    <div class="container author">
+      <div>
+        <!-- TODO: trocar foto da autora -->
+        <img src="img/bl-3.jpg" alt="Manuella Camargo na cozinha segurando colher de pau">
+      </div>
+      <div>
+        <span class="tag mb-8">Sobre a Autora,</span>
+        <h2 id="autora-title">Manuella Camargo</h2>
+        <p class="mb-16">A intolerância ao glúten mudou minha cozinha — e me fez criar versões <strong>de verdade</strong> dos bolos que eu amava. Depois de muitos testes (e erros!), reuni neste e‑book as receitas que mais agradam aqui em casa e entre meus alunos.</p>
+        <p class="muted">*As receitas não são “milagrosas”. Elas funcionam porque combinam <strong>técnica simples</strong> com <strong>ingredientes certos</strong> — e você tem <strong>suporte por e‑mail</strong> para tirar dúvidas.</p>
+        <div class="cta-block">
+          <a class="btn" href="https://pay.kiwify.com.br/j0eBXh8">Desvende os Segredos &nbsp;•&nbsp; BAIXAR MINHA CÓPIA</a>
+          <p id="checkout" class="quote-small mb-0">Acesso imediato 🔒 Compra segura</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ / CTA FINAL -->
+  <footer>
+    <div class="container center">
+      <h3 class="mb-8">Pronto(a) para assar o seu primeiro bolo sem glúten?</h3>
+      <a class="btn" href="#comprar">BAIXAR MINHA CÓPIA</a>
+      <p class="muted mb-0" style="margin-top:10px">Copyright © 2025 • Manuella Camargo • Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // rolar suave para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
