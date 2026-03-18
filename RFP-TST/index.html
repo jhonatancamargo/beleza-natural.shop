@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorteio R$1.000 no PIX</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f4f4f4;
+text-align:center;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+background:white;
+padding:20px;
+}
+
+h1{
+font-size:34px;
+color:#0a8f3c;
+margin-bottom:10px;
+}
+
+.premio{
+font-size:28px;
+font-weight:bold;
+color:#0a8f3c;
+}
+
+.preco{
+font-size:26px;
+color:#e60000;
+font-weight:bold;
+margin:20px 0;
+}
+
+.btn{
+display:block;
+background:#00b050;
+color:white;
+padding:18px;
+margin:10px 0;
+font-size:20px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:0.2s;
+}
+
+.btn:hover{
+background:#009140;
+transform:scale(1.03);
+}
+
+.box{
+background:#f8f8f8;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
+text-align:left;
+}
+
+.urgencia{
+color:red;
+font-weight:bold;
+margin-top:10px;
+font-size:18px;
+}
+
+.contador{
+background:#ffe600;
+padding:12px;
+font-weight:bold;
+border-radius:8px;
+margin-top:10px;
+}
+
+img{
+width:100%;
+border-radius:10px;
+margin-top:10px;
+}
+
+.selo{
+font-size:16px;
+margin-top:15px;
+}
+
+.topbar{
+background:#ff0000;
+color:white;
+padding:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+⚡ Sorteio ativo para Santa Catarina
+</div>
+
+<div class="container">
+
+<img src="img/sorteio.png" alt="Prêmio do sorteio">
+
+<h1>🎉 SORTEIO ESPECIAL</h1>
+
+<p class="premio">GANHE R$1.000 NO PIX</p>
+
+<p class="preco">Cada número custa apenas R$0,60</p>
+
+<p>Participe agora e concorra ao prêmio.</p>
+
+<div class="contador">
+🔥 137 números já reservados
+</div>
+
+<div class="urgencia">
+⚡ Sorteio acontece assim que todos números forem vendidos
+</div>
+
+<h2 id="pacotes">Escolha seu pacote</h2>
+
+<a class="btn" href="https://produtos-naturais44.pay.yampi.com.br/r/P8NTD00CY0">
+🔥 GARANTIR 15 NÚMEROS – R$9
+</a>
+
+<a class="btn" href="https://produtos-naturais44.pay.yampi.com.br/r/KD625JEHPD">
+🔥 GARANTIR 30 NÚMEROS – R$18
+</a>
+
+<a class="btn" href="https://produtos-naturais44.pay.yampi.com.br/r/QFHNU9CJJE">
+🔥 GARANTIR 50 NÚMEROS – R$30
+</a>
+
+<div class="box">
+
+<h3>🎁 Sobre o prêmio</h3>
+
+<p>
+O ganhador receberá <b>R$1.000 via PIX</b> diretamente em sua conta.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>📅 Data do sorteio</h3>
+
+<p>
+O sorteio será realizado quando todos os números forem vendidos.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>📩 Como recebo meus números?</h3>
+
+<p>
+Após a confirmação do pagamento, seus números serão enviados para você.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>💳 Pagamento</h3>
+
+<p>
+Pagamento rápido e seguro via PIX através do checkout da Yampi.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>🏆 Primeiro ganhador será divulgado aqui</h3>
+
+<img src="img/ganhador.png" alt="Área do ganhador">
+
+<p>
+Assim que sair o primeiro ganhador, a prova de pagamento será publicada aqui.
+</p>
+
+</div>
+
+<div class="box">
+
+<h3>📜 Regras</h3>
+
+<p>
+
+• Cada pacote garante a quantidade de números comprada.<br><br>
+
+• Os números são enviados após confirmação do pagamento.<br><br>
+
+• O sorteio será divulgado para todos os participantes.<br><br>
+
+• O ganhador receberá o prêmio via PIX.
+
+</p>
+
+</div>
+
+<a class="btn" href="#pacotes">
+🚀 GARANTIR MEUS NÚMEROS AGORA
+</a>
+
+<div class="selo">
+
+✔ Pagamento seguro<br>
+✔ Sorteio transparente<br>
+✔ Participantes de Santa Catarina
+
+</div>
+
+<div id="popupCompra" style="
+position:fixed;
+bottom:20px;
+left:20px;
+background:#aee7ae;
+padding:12px 18px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,0.25);
+font-size:14px;
+display:none;
+z-index:9999;
+max-width:260px;
+">
+
+</div>
+
+<style>
+@keyframes fadein {
+from {opacity:0; transform:translateY(10px);}
+to {opacity:1; transform:translateY(0);}
+}
+</style>
+
+<script>
+
+let mensagens = [
+
+"🔥 João de Blumenau acabou de comprar 30 números",
+"🔥 Ana de Joinville acabou de comprar 15 números",
+"🔥 Carlos de Florianópolis acabou de comprar 50 números",
+"🔥 Marcos de Itajaí acabou de comprar 20 números",
+"🔥 Juliana de Balneário Camboriú comprou 15 números",
+"🔥 Pedro de Brusque acabou de comprar 30 números"
+
+];
+
+let index = 0;
+
+function mostrarPopup(){
+
+let popup = document.getElementById("popupCompra");
+
+popup.innerText = mensagens[index];
+
+popup.style.display = "block";
+popup.style.animation = "fadein 0.5s";
+
+setTimeout(function(){
+
+popup.style.display = "none";
+
+index++;
+
+if(index >= mensagens.length){
+index = 0;
+}
+
+setTimeout(mostrarPopup,10000);
+
+},7000);
+
+}
+
+setTimeout(mostrarPopup,3000);
+
+</script>
+
+</div>
+
+</body>
+</html>
